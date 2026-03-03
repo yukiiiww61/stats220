@@ -7,4 +7,4 @@ A little about me:
 - I am taking STATS 220 because as a Communication and Technology student, I want to better understand the technical foundations behind digital media platforms and data-driven communication.
 - I am interested in learning about how data is collected and processed in online environments, and how these processes influence communication strategies, audience targeting, and content creation.
 
-A meme that captures how I currently feel about my university studies is ![](https://tenor.com/en-GB/view/business-cat-working-cat-boss-angry-gif-13655998)
+A meme that captures how I currently feel about my university studies is ![](https://tenor.com/en-GB/view/cat-work-it-make-cat-typing-fast-swagger-gif-12072592)
