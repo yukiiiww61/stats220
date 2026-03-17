@@ -28,4 +28,4 @@ Visit the course website:
 
 https://canvas.auckland.ac.nz/courses/141163
 
-![fun gif](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+![fun gif](https://giphy.com/gifs/sanerai-a-ad-adh-J5AhhrPHSpDdHB55vF)
