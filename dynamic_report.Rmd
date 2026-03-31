@@ -1,0 +1,74 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+```
+
+## What's going on with this data?
+
+This dataset records observational logs of videos that appeared on my Bilibili app over a period of time. Each entry represents a single video and includes information about its content type, length and whether it was watched until the end.
+
+Additionally, there may be a relationship between video length and engagement. Shorter videos appear more likely to be fully watched, while longer videos are more likely to be skipped before completion. This reflects common patterns in short-form video consumption, where users tend to prefer quick and easily consumable content.
+
+Overall, the data suggests that both content type and video length influence user engagement, and that the recommendation system may reinforce exposure to certain types of content, potentially shaping viewing habits over time.
+
+```{r}
+library(tidyverse)
+
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTvvl3P2jaXX6fSgmDQPUrUKT3dmI4ATh17cTaRrVHXpKPfILaRv6vs6t1e1Q9UFBm1xmgzPT-TYNO_/pub?output=csv")
+
+# View data
+glimpse(logged_data)
+
+names(logged_data)
+
+latest_data <- logged_data %>%
+  rename(
+    video_type = `What type of video is this?`,
+    length_min = `Approximate length of the video (in minutes)`,
+    watched_end = `Did you watch the video until the end?`,
+    interest = `How interesting did you find this video? (1–5)`,
+  )
+
+
+# Average video length
+mean_length <- mean(latest_data$length_min, na.rm = TRUE)
+
+# Max length
+max_length <- max(latest_data$length_min, na.rm = TRUE)
+
+# Average interest score
+mean_interest <- mean(latest_data$interest, na.rm = TRUE)
+
+ggplot(latest_data, aes(x = video_type)) +
+  geom_bar() +
+  labs(
+    title = "Distribution of Video Types",
+    x = "Video Type",
+    y = "Count"
+  ) +
+  theme_minimal()
+
+ggplot(latest_data, aes(x = watched_end)) +
+  geom_bar() +
+  labs(
+    title = "Watch Completion",
+    x = "Watched to End",
+    y = "Count"
+  ) +
+  theme_minimal()
+```
+
+#The best pet to have is a 'r best_pet' of course!
+#Share my cute cat meme gif.
+
+![](https://media1.tenor.com/m/lfDATg4Bhc0AAAAC/happy-cat.gif)
